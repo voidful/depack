@@ -16,6 +16,10 @@ or
 ```bash
 unpack ./test.zip
 ```
+or
+```bash
+python -m de.pack ./test.zip
+```
 
 ### compress file
 ```bash

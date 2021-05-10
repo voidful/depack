@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='depack',
-    version='0.0.1',
+    version='0.0.2',
     description='Universal archive file tool',
     url='https://github.com/voidful/depack',
     author='Voidful',
@@ -25,7 +25,7 @@ setup(
         "nlp2"
     ],
     entry_points={
-        'console_scripts': ['depack=src.main:main', 'unpack=src.main:main']
+        'console_scripts': ['depack=de.pack:main', 'unpack=de.pack:main']
     },
     zip_safe=False,
 )

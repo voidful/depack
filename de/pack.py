@@ -18,16 +18,22 @@ def parse_args(args):
 def main(arg=None):
     arg, others_arg = parse_args(sys.argv[1:]) if arg is None else parse_args(arg)
     if arg.get('create', None):
+        print("start creating...")
         archive_file = arg.get('create')
         filenames = others_arg
         patoolib.create_archive(archive=archive_file, filenames=filenames, verbosity=-1)
+        print("Finish")
     elif arg.get('file', None) or len(others_arg) > 0:
+        print("start decompressing...")
         extract_list = arg.get('file', []) + others_arg
         for path in extract_list:
             if nlp2.is_file_exist(path):
                 parent_dir = Path(path).parent.absolute()
                 patoolib.extract_archive(path, outdir=parent_dir, verbosity=-1)
-    print("Finish")
+        print("Finish")
+    else:
+        print("no file input")
+
 
 if __name__ == "__main__":
     main()
